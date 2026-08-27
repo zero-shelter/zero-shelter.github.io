@@ -306,7 +306,7 @@ html[lang="ko"] .start-links strong {
 
 .about-page .about-reason > p:not(.about-label),
 .about-page .about-evidence > p:not(.about-label) {
-  max-width: 48ch;
+  max-width: none;
   font-size: 1.03rem;
   text-wrap: balance;
 }
