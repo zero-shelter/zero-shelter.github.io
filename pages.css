@@ -251,8 +251,12 @@ html[lang="ko"] .start-links strong {
   border-right: 0;
 }
 
+.page-method .method-flow article:first-child {
+  padding-left: 1.5rem;
+}
+
 .page-method .method-flow article:nth-child(n + 3) {
-  padding-top: 1.5rem;
+  padding-top: 1.25rem;
   border-top: 1px solid var(--line);
 }
 
@@ -274,6 +278,20 @@ html[lang="ko"] .start-links strong {
 
 .page-use {
   padding-top: clamp(3.5rem, 7vw, 6rem);
+}
+
+.page-use .use-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.page-use .use-item:first-child {
+  padding-left: 1.5rem;
+}
+
+.page-use .use-item code {
+  margin-top: auto;
+  align-self: flex-start;
 }
 
 .method .page-next-action,
@@ -355,7 +373,7 @@ html[lang="ko"] .start-links strong {
 
 .route-entry {
   display: grid;
-  grid-template-columns: minmax(7rem, .42fr) minmax(0, 1fr) auto;
+  grid-template-columns: minmax(7rem, .42fr) minmax(0, 1fr) 9.5rem;
   gap: 1rem 1.5rem;
   align-items: start;
   padding: 1.45rem 0 1.6rem;
@@ -603,6 +621,14 @@ footer.site-footer {
     gap: 2.5rem;
   }
 
+  .page-use .use-item:first-child {
+    padding-left: 0;
+  }
+
+  .page-use .use-item code {
+    margin-top: 1.45rem;
+  }
+
 }
 
 @media (max-width: 540px) {
@@ -616,6 +642,14 @@ footer.site-footer {
 
   .page-method .method-flow article:nth-child(2) {
     border-right: 0;
+  }
+
+  .page-method .method-flow article:first-child {
+    padding-left: 0;
+  }
+
+  .page-method .method-flow article:nth-child(n + 3) {
+    padding-top: 1.45rem;
   }
 
   .start-links a {
