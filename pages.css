@@ -264,6 +264,129 @@ html[lang="ko"] .start-links strong {
   max-width: 40ch;
 }
 
+.method-notes {
+  display: grid;
+  grid-template-columns: minmax(0, .72fr) minmax(0, 1.28fr);
+  gap: clamp(3rem, 9vw, 10rem);
+  max-width: 1440px;
+  margin: clamp(4rem, 8vw, 7rem) auto 0;
+  padding-top: clamp(3rem, 6vw, 5rem);
+  border-top: 1px solid var(--line);
+}
+
+.method-notes > *,
+.use-details > *,
+.command-stack,
+.copy-command {
+  min-width: 0;
+}
+
+.method-notes-intro h2,
+.use-guide h2,
+.use-agent-guide h2 {
+  margin-bottom: 1rem;
+  font-size: clamp(2.45rem, 4vw, 4.5rem);
+}
+
+.method-notes-intro > p:last-child,
+.use-guide > p:not(.overline),
+.use-agent-guide > p:not(.overline) {
+  max-width: 42ch;
+  margin-bottom: 0;
+  color: var(--moss);
+  font-size: .95rem;
+}
+
+.method-note-list {
+  border-top: 1px solid var(--line);
+}
+
+.method-note-list article {
+  padding: 1.35rem 0 1.5rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.note-index,
+.use-step {
+  display: block;
+  margin-bottom: .85rem;
+  color: var(--moss);
+  font-family: var(--mono);
+  font-size: .7rem;
+}
+
+.method-note-list h3,
+.use-path h3,
+.use-agent-guide > h3 {
+  margin-bottom: .55rem;
+  font-family: var(--serif);
+  font-size: 1.45rem;
+  font-weight: 400;
+  letter-spacing: -.035em;
+  line-height: 1.05;
+}
+
+html[lang="ko"] .method-note-list h3,
+html[lang="ko"] .use-path h3,
+html[lang="ko"] .use-agent-guide > h3 {
+  font-family: var(--sans);
+  font-weight: 700;
+}
+
+.method-note-list article > p:not(.note-index),
+.use-path p {
+  max-width: 44ch;
+  margin-bottom: 0;
+  color: var(--moss);
+  font-size: .9rem;
+}
+
+.copy-command {
+  display: inline-flex;
+  max-width: 100%;
+  align-items: center;
+  gap: .7rem;
+  margin-top: 1.15rem;
+  padding: .45rem .55rem;
+  border: 1px solid var(--line);
+  background: rgba(28, 37, 32, .07);
+  color: var(--ink);
+  text-align: left;
+}
+
+.copy-command code {
+  min-width: 0;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+  font-family: var(--mono);
+  font-size: .7rem;
+}
+
+.copy-command span {
+  flex: none;
+  padding-left: .7rem;
+  border-left: 1px solid var(--line);
+  font-family: var(--mono);
+  font-size: .64rem;
+  font-weight: 700;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+}
+
+.method-note-list .note-code {
+  display: block;
+  width: max-content;
+  max-width: 100%;
+  margin-top: 1.15rem;
+  padding: .45rem .55rem;
+  overflow: auto;
+  background: rgba(28, 37, 32, .07);
+  color: var(--ink);
+  font-family: var(--mono);
+  font-size: .7rem;
+  white-space: nowrap;
+}
+
 .hero-summary,
 .page-hero > p:last-child,
 .home-map p,
@@ -292,6 +415,114 @@ html[lang="ko"] .start-links strong {
 .page-use .use-item code {
   margin-top: auto;
   align-self: flex-start;
+}
+
+.use-details {
+  display: grid;
+  grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr);
+  gap: clamp(3rem, 9vw, 10rem);
+  max-width: 1440px;
+  margin: clamp(4rem, 8vw, 7rem) auto 0;
+  padding-top: clamp(3rem, 6vw, 5rem);
+  border-top: 1px solid rgba(240, 239, 232, .26);
+}
+
+.use-guide > p:not(.overline),
+.use-agent-guide > p:not(.overline) {
+  color: var(--mist);
+}
+
+.use-path {
+  margin: 2rem 0 0;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid rgba(240, 239, 232, .26);
+}
+
+.use-path li {
+  display: grid;
+  grid-template-columns: 2.5rem minmax(0, 1fr);
+  gap: 1rem;
+  padding: 1.25rem 0;
+  border-bottom: 1px solid rgba(240, 239, 232, .22);
+}
+
+.use-step {
+  color: #b8cdaa;
+}
+
+.use-path h3,
+.use-agent-guide > h3 {
+  color: #fff;
+}
+
+.use-path p {
+  color: var(--mist);
+}
+
+.use .copy-command {
+  border-color: rgba(240, 239, 232, .26);
+  background: rgba(240, 239, 232, .1);
+  color: var(--paper);
+}
+
+.use .copy-command span {
+  border-color: rgba(240, 239, 232, .26);
+  color: var(--lime);
+}
+
+.use-agent-guide > h3 {
+  margin-top: 2.2rem;
+}
+
+.command-stack {
+  display: grid;
+  gap: .55rem;
+  margin-top: 1rem;
+}
+
+.command-stack .copy-command {
+  width: 100%;
+  justify-content: space-between;
+  margin-top: 0;
+}
+
+.agent-config {
+  max-width: 100%;
+  margin: 1.5rem 0;
+  padding: 1rem;
+  overflow: auto;
+  overflow-wrap: anywhere;
+  background: rgba(16, 19, 20, .45);
+  color: var(--mist);
+  font-family: var(--mono);
+  font-size: .72rem;
+  line-height: 1.55;
+  white-space: pre-wrap;
+}
+
+.use .text-action {
+  color: var(--lime);
+}
+
+.use-output {
+  max-width: 1440px;
+  margin: clamp(4rem, 8vw, 7rem) auto 0;
+  padding-top: clamp(2.5rem, 5vw, 4rem);
+  border-top: 1px solid rgba(240, 239, 232, .26);
+}
+
+.use-output > p:not(.overline) {
+  max-width: 58ch;
+  margin-bottom: 1.2rem;
+  color: var(--mist);
+  font-size: .95rem;
+}
+
+.use-output code {
+  color: var(--paper);
+  font-family: var(--mono);
+  font-size: .85em;
 }
 
 .method .page-next-action,
@@ -323,10 +554,18 @@ html[lang="ko"] .start-links strong {
 }
 
 .about-page .about-reason > p:not(.about-label),
-.about-page .about-evidence > p:not(.about-label) {
+.about-page .about-evidence > p:not(.about-label),
+.about-page .about-status > p:not(.about-label),
+.about-page .about-boundary > p:not(.about-label) {
   max-width: none;
   font-size: 1.03rem;
   text-wrap: balance;
+}
+
+.about-page .about-status .text-action,
+.about-page .about-boundary .text-action {
+  display: inline-block;
+  margin-top: .15rem;
 }
 
 .about-page .about-reason > p + p {
@@ -344,7 +583,9 @@ html[lang="ko"] .start-links strong {
 
 @media (max-width: 600px) {
   .about-page .about-reason > p:not(.about-label),
-  .about-page .about-evidence > p:not(.about-label) {
+  .about-page .about-evidence > p:not(.about-label),
+  .about-page .about-status > p:not(.about-label),
+  .about-page .about-boundary > p:not(.about-label) {
     text-wrap: pretty;
   }
 }
@@ -621,6 +862,12 @@ footer.site-footer {
     gap: 2.5rem;
   }
 
+  .method-notes,
+  .use-details {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
   .page-use .use-item:first-child {
     padding-left: 0;
   }
@@ -674,6 +921,16 @@ footer.site-footer {
   .start-links i {
     grid-column: 3;
     grid-row: 1 / span 2;
+  }
+
+  .use-path li {
+    grid-template-columns: 2rem minmax(0, 1fr);
+    gap: .8rem;
+  }
+
+  .agent-config {
+    padding: .8rem;
+    font-size: .68rem;
   }
 
   .route-entry {
