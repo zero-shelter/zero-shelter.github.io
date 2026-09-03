@@ -9,7 +9,7 @@
     <link rel="icon" href="../assets/zero-shelter-mark.png">
     <link rel="stylesheet" href="../styles.css">
     <link rel="stylesheet" href="../profile-register.css">
-    <link rel="stylesheet" href="../pages.css?revision=about-proof-5">
+    <link rel="stylesheet" href="../pages.css?revision=cli-workflows">
     <title>zero-shelter — dependency security, down to the next action</title>
   </head>
   <body data-page="about">
@@ -28,19 +28,29 @@
       <section class="page-hero" aria-labelledby="page-title">
         <p class="overline" data-i18n="aboutOverline">Why it exists · who maintains it</p>
         <h1 id="page-title" data-i18n-html="aboutTitle">Why it exists,<br><em>who maintains it.</em></h1>
-        <p data-i18n="aboutLead">Built to leave the next dependency change and the evidence behind it in the same place.</p>
+        <p data-i18n="aboutLead">A preview tool whose decision stays close to its evidence, from local scan to CI and agent context.</p>
       </section>
       <section class="about about-page">
         <div class="about-details">
           <article class="about-reason">
             <p class="about-label" data-i18n="aboutReasonLabel">Why zero-shelter</p>
             <p data-i18n="aboutReasonFirst">Security scanners can report the same vulnerability under different names while carrying the inherited backlog alongside it. The task is not reading every alert; it is deciding which dependency to change now.</p>
-            <p data-i18n-html="aboutReasonSecond">zero-shelter joins <span class="nowrap">npm audit</span> and optional <span class="nowrap">osv-scanner</span> results only when they share an identifier. It keeps the next action with the evidence that supports it and does not guess at uncertain matches.</p>
+            <p data-i18n-html="aboutReasonSecond">zero-shelter joins <span class="nowrap">npm audit</span> and <span class="nowrap">osv-scanner</span> results only when they share an identifier. It keeps the next action with the evidence that supports it and does not guess at uncertain matches.</p>
           </article>
           <article class="about-evidence">
             <p class="about-label" data-i18n="aboutEvidenceLabel">What we have measured</p>
             <p data-i18n="aboutEvidenceText">Across four fixed external projects, it reduced report volume by 47–54%. That measures volume, not accuracy, and frozen captures let anyone rerun the comparison offline.</p>
             <a class="text-action" href="https://github.com/zero-shelter/zero-shelter/tree/main/bench" data-i18n-html="aboutEvidenceAction">Read the benchmark <span aria-hidden="true">↗</span></a>
+          </article>
+          <article class="about-status">
+            <p class="about-label" data-i18n="aboutStatusLabel">Current shape</p>
+            <p data-i18n="aboutStatusText">Preview package. Node 20 or later. No runtime dependencies or network calls of its own; scanners retain their own behavior. The feature set can move; the CI contract stays explicit.</p>
+            <a class="text-action" href="https://github.com/zero-shelter/zero-shelter/blob/main/docs/STABILITY.md" data-i18n-html="aboutStatusAction">Read the stability contract <span aria-hidden="true">↗</span></a>
+          </article>
+          <article class="about-boundary">
+            <p class="about-label" data-i18n="aboutBoundaryLabel">v1 boundary</p>
+            <p data-i18n="aboutBoundaryText">Dependency findings are in. SAST, secret scanning, and prompt-intent controls are planned, not shipped.</p>
+            <a class="text-action" href="https://github.com/zero-shelter/zero-shelter/blob/main/docs/v1-scope.md" data-i18n-html="aboutBoundaryAction">Read the v1 scope <span aria-hidden="true">↗</span></a>
           </article>
           <article class="about-maintainers">
             <p class="about-label" data-i18n="aboutMaintainersLabel">Maintained in the open</p>
@@ -57,6 +67,6 @@
     </main>
     <footer class="site-footer"><a class="wordmark" href="../"><img class="brand-mark" src="../assets/zero-shelter-mark.png" alt="">zero<span>—</span>shelter</a><div class="footer-meta"><span>Apache-2.0</span><a href="https://github.com/zero-shelter">GitHub <span aria-hidden="true">↗</span></a></div><nav class="footer-nav" aria-label="Footer navigation" data-i18n-aria="footerNavigation"><a href="../how-it-works/" data-i18n="navMethod">Method</a><a href="../use/" data-i18n="navUse">Use it</a><a href="../contribute/" data-i18n="navContribute">Contribute</a><a href="../about/" data-i18n="navAbout">About</a></nav></footer>
     <div class="copy-feedback" role="status" aria-live="polite"></div>
-    <script src="../script.js?revision=about-proof-3"></script>
+    <script src="../script.js?revision=cli-workflows"></script>
   </body>
 </html>
