@@ -961,3 +961,6 @@ footer.site-footer {
     gap: 1rem;
   }
 }
+
+.report-example { margin: 0 0 1rem; overflow-x: auto; font: .8rem/1.7 "SFMono-Regular", Consolas, monospace; white-space: pre; }
+.terminal-body > a.terminal-evidence { display: inline-block; color: inherit; text-underline-offset: .2em; }
