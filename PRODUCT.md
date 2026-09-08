@@ -12,7 +12,7 @@ Developers and security-conscious maintainers who need to decide which dependenc
 
 ## Product Purpose
 
-zero-shelter turns dependency-scanner output into a short, deterministic list of the fixes that need attention. It exists because reviewing long, overlapping security reports can cost more attention than making the fixes.
+zero-shelter combines dependency scanner reports, ranks findings with documented rules, and shows available upgrade guidance. The website explains direct use, CI, and coding-agent integration.
 
 ## Positioning
 
@@ -24,9 +24,9 @@ The CLI runs locally in JavaScript projects, including terminal, CI, and coding-
 
 ## Capabilities and Constraints
 
-- Reads npm audit and optional osv-scanner output.
+- Reads supported npm/pnpm audit and OSV-Scanner output. Lockfiles and available scanners determine live collection; saved reports can also be supplied.
 - Produces terminal, JSON, HTML, and SARIF output, plus a coding-agent hook.
-- Uses a baseline so CI can fail only on newly introduced findings.
+- Compares current findings with accepted risks recorded in a baseline. New findings and expired acceptances can fail CI.
 - Product contributions require a public Issue before implementation, except focused documentation or test fixes that may use the PR template directly.
 - Security vulnerabilities must not be reported in public Issues or pull requests.
 
@@ -44,9 +44,9 @@ The official zero-shelter mark is `assets/zero-shelter-mark.png`. The public web
 
 ## Product Principles
 
-- Keep one inspectable path from raw finding to next action.
+- Link product explanations and examples to their source and reproduction steps.
 - Preserve deterministic results across runs and environments.
-- Keep project data local by default.
+- Keep judgement local; state that invoked scanners may access the network and repository configuration.
 - Keep public contribution and security-reporting boundaries explicit.
 
 ## Accessibility & Inclusion

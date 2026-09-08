@@ -1,6 +1,6 @@
 ---
 name: zero-shelter
-description: A quiet, evidence-led static reading surface for security decisions.
+description: Visual specifications for the zero-shelter public website.
 colors:
   paper: "#f5f6f2"
   paper-deep: "#e7e9e3"
@@ -48,137 +48,36 @@ components:
     padding: ".75rem .8rem .75rem 1rem"
 ---
 
-# Design System: zero-shelter
+# Website design
 
-## Overview
+The site uses static pages, a light background, dark code examples and the existing lime brand accent. Preserve the colors, type sizes and spacing defined above.
 
-**Creative North Star: "The Signal Path"**
+`assets/zero-shelter-mark.png` is the official mark and browser icon. Do not recolor or redraw it. Existing GitHub and npm marks identify their links; keep the service names beside them and do not imply endorsement.
 
-This is a reading surface for a judgement that should feel calm, checkable, and complete. Paper-like fields, near-black evidence blocks, lime signals, serif statements, and monospaced facts create the contrast between considered interpretation and inspectable output.
+## Typography and color
 
-**Brand Mark:** `assets/zero-shelter-mark.png` is the official square source mark. It appears beside the zero-shelter wordmark and supplies the browser icon; its dark field and lime signal are intentional and must not be recoloured or redrawn in CSS.
+Use Pretendard Variable for English and Korean, with the existing system fallbacks. The pinned jsDelivr v1.3.9 subset and public GitHub profile avatars are the existing external visual resources; do not add others. Commands use SFMono-Regular, Consolas or Liberation Mono.
 
-**Key Characteristics:**
+Body text uses a 1.55 line height. Reserve the large display size for page and section headings. Keep commands literal and readable; allow horizontal scrolling when a narrow screen cannot fit an example.
 
-- Editorial rather than dashboard-like.
-- The official mark's near-black, white, and lime signal define the product's contrast system.
-- Static-first: home, method, use, and about are separate GitHub Pages routes. The home page gives the product path once, then directs visitors to GitHub and npm; Korean copy loads the pinned Pretendard webfont from jsDelivr, with local system fallbacks.
-
-## Colors
-
-The palette combines a clean paper reading field with the official mark's near-black evidence field and lime signal.
-
-| Token | Value | Role |
-| --- | --- | --- |
-| Paper | `#f5f6f2` | Main reading ground |
-| Paper Deep | `#e7e9e3` | Documentary band |
-| Ink | `#101314` | Official-mark black and primary decision surface |
-| Forest | `#1c2520` | Secondary dark field and structural emphasis |
-| Moss | `#526659` | Small ordinal and restrained structural detail |
-| Signal | `#6f8f0d` | Accessible lime-derived emphasis on paper |
-| Lime | `#c8f33a` | Official-mark signal on dark fields only |
-| npm mark | `#C12127` | Unmodified npm service mark in the home start link only |
-| Terminal / Mist | `#161b1c` / `#e7ebe3` | Inverted terminal pair |
-| Terminal accents | `#f5a68d`, `#d8ed7e`, `#c8f33a` | Severity and score reinforcement; labels remain visible |
-
-### Primary
-
-- **Ink:** the dominant dark evidence field, taken from the official mark.
-- **Lime:** the official mark's signal color; use it for action or live status only on dark fields, never as the only carrier of status.
-
-### Neutral
-
-- **Paper / Paper Deep:** the primary reading field and alternating documentary band.
-- **Ink:** default text and the strongest action surface.
-- **Terminal / Mist:** the inverted evidence pair for the signature terminal example.
-- **Line:** quiet division between related records.
-
-**The Evidence-First Rule.** Use colour to reinforce a visible label, rank, or position; do not encode severity, state, or meaning by colour alone.
-
-## Typography
-
-**English Display and Body Font:** Pretendard Variable, with platform sans-serif fallbacks. It shares the Korean system's clear proportions without adding another network font.
-
-**Korean Display and Body Font:** Pretendard Variable, loaded from the pinned jsDelivr v1.3.9 dynamic subset; Apple SD Gothic Neo, Noto Sans KR, and Malgun Gothic are fallbacks.
-
-**Label/Mono Font:** SFMono-Regular with Consolas and Liberation Mono fallbacks.
-
-**Character:** A single bilingual sans-serif system keeps statements and body copy equally direct; mono type marks commands, evidence, indices, and machine-readable facts.
-
-### Hierarchy
-
-- **Display:** large, confident sans-serif headlines with compact leading; reserve for the hero and section conclusions.
-- **Body:** readable sans-serif paragraphs at a relaxed 1.55 line-height; constrain explanatory copy to narrow measures.
-- **Label:** small, uppercase mono overlines with increased tracking for section context.
-- **Mono:** compact terminal and code text; preserve commands as literal, unwrapped evidence where space permits.
-
-**The Statement-and-Record Rule.** Use the display weight for a human conclusion and mono type for the data or command that supports it; avoid treating code as decoration.
+Use `#f5f6f2` for the page, `#e7e9e3` for alternate sections and `#101314` for primary text. Dark examples use `#161b1c` with `#e7ebe3` text. The lime accent `#c8f33a` belongs on dark backgrounds; use `#6f8f0d` for emphasis on the light page. Severity, active state and actions also need visible text or accessible attributes.
 
 ## Layout
 
-The home page uses a wide editorial canvas with a two-column hero, a short three-link route map, and one dark start section for GitHub and npm. Method, Use, and About are separate pages, each with one focused page hero before its supporting content. Generous spacing and hairline rules organize repeated records without card clutter.
+Home has a two-column introduction, links to the supporting pages and a GitHub/npm start section. Method, Use, Contribute and About each have a page heading followed by the relevant guidance.
 
-At 850px and below, the hero, evidence, and scope layouts become single-column; the four-step method becomes two columns, and the use cases stack. At 540px and below, method steps become one column, hero actions stack, the primary navigation is absent, and page padding tightens without reducing the headline hierarchy.
+At 850px and below, the main two-column sections stack. At 540px and below, method steps and hero actions stack and page padding narrows. Navigation must remain reachable through the mobile menu.
 
-## Elevation & Depth
+Keep the existing rules, square sections and 2px control corners. The language selector uses its existing 999px radius. Retain the terminal's `14px 16px 0 rgba(23,36,31,.11)` offset shadow and the command buttons' small offset shadow. Do not add gradients, floating cards, glass effects, decorative charts or score gauges.
 
-The page is almost flat. Depth comes from tonal bands, inversion, and rules; only the terminal sheet and command buttons use offset shadows to suggest a physical record placed on the paper. The terminal sheet uses `14px 16px 0 rgba(23,36,31,.11)`; command buttons use a short moss or signal offset shadow that contracts on hover.
+## Controls and content
 
-**The Flat-by-Default Rule.** Do not add soft shadows, floating cards, gradients, glass effects, or decorative charts.
+- Keep the header fixed on an opaque background. Mark the current route with `aria-current="page"` and the selected language with `aria-pressed`.
+- Copy buttons show the literal command and a copy label. Respect reduced-motion preferences when animating hover or focus.
+- Copy feedback uses `role="status"` and `aria-live="polite"`, follows the selected language and does not shift page layout.
+- Translate visible text, accessible names, document language, title, description and copy feedback together. English and Korean use the same layout.
+- Examples need a version, reproducible input and a source link. Label excerpts and omissions. Do not invent scores, remediation counts or claims that a report proves safety.
+- Method and Use link to the README for installation and detailed behavior. Keep the footer focused on route links, GitHub and the license.
+- Public maintainer entries preserve names, handles and GitHub links. Do not imply organization ownership from contribution activity.
 
-## Shapes
-
-Forms are squared and documentary. Controls use the shallow `2px` corner radius; rectangular sections, rules, and grid divisions do most of the grouping. The terminal's faint circular line is a contained signature detail, not a reusable decorative motif.
-
-## Components
-
-### Navigation
-
-The header is a compact three-part grid: wordmark, route links, and utility actions. English route labels are `HOW IT WORKS`, `USE`, `CONTRIBUTE`, and `ABOUT`; Korean labels are `작동 방식`, `사용하기`, `기여하기`, and `소개`. It stays fixed at the top while scrolling on a solid paper surface. The current page is exposed with `aria-current="page"` and the active language with `aria-pressed`, not colour alone. At narrow widths, replace the route links with an explicit menu trigger; never hide navigation without a reachable replacement.
-
-### Command Buttons
-
-The command is the primary action and remains visibly executable: mono command text, a separated uppercase copy label, high-contrast fill, and a small offset shadow. On hover, translate the control by `2px` in both axes and reduce its shadow; respect reduced-motion preferences by removing the transition.
-
-### Terminal Sheet
-
-The signature component is an inverted figure, not an application dashboard. Keep its caption, command, labelled finding rows, explicit scores, remedy, and evidence line in a single bounded sheet. Severity labels, ordering, and numbers must remain legible without relying on their accent colours.
-
-### Feedback
-
-Copy feedback is a compact fixed status message with `role="status"` and `aria-live="polite"`. It appears briefly near the bottom centre, never shifts document layout, and must retain the current language.
-
-### Language Selector
-
-English and Korean use one compact two-segment control with the documented `999px` radius. The active language is the dark filled segment; the inactive option remains quiet until hover or focus. Localize accessible names, document language, metadata description, title, and transient copy feedback together; do not substitute translated content with a visually different layout.
-
-### Footer
-
-The footer is a utility register, not a second hero. Keep the wordmark, `Apache-2.0`, the organization GitHub link, and a quiet route list. Do not repeat the product description or add a competing repository action to the header.
-
-### Start Links
-
-The home-page start section may use the unmodified GitHub and npm vector marks only as secondary link identifiers, paired with their service names and direct destinations. Render them as inline SVG with explicit dimensions, never as auto-sized replaced images. They must never compete with the zero-shelter mark or suggest sponsorship or endorsement.
-
-### Page Actions
-
-The home flow explains the product path once: read findings, reconcile overlap, then keep the next fix. It links to the method page rather than duplicating the primary navigation. Method and Use each end with one direct route to the public README, so a visitor can continue from concept to installation or CI detail.
-
-### Maintainer Cards
-
-The About section may identify public contributors as maintainers. Render them as a quiet, ruled register: public GitHub avatar, name, handle, and one icon-only GitHub link per person. Do not imply organization-owner status unless it is independently established and intended for publication.
-
-## Do's and Don'ts
-
-### Do:
-
-- **Do** preserve the paper, near-black, and lime hierarchy across both languages.
-- **Do** pair each signal with a textual label, rank, or numerical value.
-- **Do** keep the site static and privacy-respecting. The pinned Pretendard font and public GitHub profile avatars are the only allowed external visual resources.
-- **Do** keep keyboard focus, the skip link, semantic headings, and reduced-motion behavior intact when changing the interface.
-
-### Don't:
-
-- **Don't** introduce dashboard chrome, score gauges, alert-banner styling, or celebratory empty-state imagery.
-- **Don't** turn every section into a rounded card or add decorative visual noise.
-- **Don't** add analytics, embedded media, or visual dependencies beyond the pinned font and explicitly listed public GitHub avatars.
+Keep keyboard focus, the skip link, semantic headings and reduced-motion behavior. Do not add analytics, embedded media or new external visual dependencies.
